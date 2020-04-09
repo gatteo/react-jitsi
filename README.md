@@ -32,8 +32,8 @@ npm install react-jitsi --save
 The easiest way for you to create a meeting is by simply including the React Jitsi component in your app.
 
 ```jsx
-import  React, { useState } from  'react'
-import  Jitsi  from  'react-jitsi'
+import React, { useState } from 'react'
+import Jitsi from 'react-jitsi'
 
 export const App = () => (
     <>
@@ -50,8 +50,8 @@ export const App = () => (
 We advise you to create a meeting specifying at least a room name (that you know is unique) and the user's display name.
 
 ```jsx
-import  React, { useState } from  'react'
-import  Jitsi  from  'react-jitsi'
+import React, { useState } from 'react'
+import Jitsi from 'react-jitsi'
 
 const roomName = 'my-super-secret-meeting-123e4567-e89b-12d3-a456-426655440000'
 const userFullName = 'Joseph Strawberry'
@@ -67,18 +67,18 @@ export const App = () => (
 ### A more complete example
 
 ```jsx
-import  React, { useState } from  'react'
-import  Jitsi  from  'react-jitsi'
+import React, { useState } from 'react'
+import Jitsi from 'react-jitsi'
 import Loader from './components/Loader'
 
-const  App = () => {
+export const App = () => {
 
     const [displayName, setDisplayName] = useState('')
     const [roomName, setRoomName] = useState('')
     const [password, setPassword] = useState('')
     const [onCall, setOnCall] = useState(false)
 
-    return  onCall
+    return onCall
         ? (
             <Jitsi
                 roomName={roomName}
@@ -90,15 +90,14 @@ const  App = () => {
         : (
             <>
                 <h1>Crate a Meeting</h1>
-                <input type='text' placeholder='Room name' value={roomName}  onChange={e => setRoomName(e.target.value)}  />
-                <input type='text' placeholder='Your name' value={displayName}  onChange={e => setDisplayName(e.target.value)}  />
-                <button  onClick={() => setOnCall(true)}> Let&apos;s start!</button>
+                <input type='text' placeholder='Room name' value={roomName} onChange={e => setRoomName(e.target.value)} />
+                <input type='text' placeholder='Your name' value={displayName} onChange={e => setDisplayName(e.target.value)} />
+                <button onClick={() => setOnCall(true)}> Let&apos;s start!</button>
             </>
         )
 
 }
 
-export  default  App
 ```
 
 ## Custom styles
@@ -106,7 +105,7 @@ export  default  App
 The Jitsi Meet conference iframe is wrapped by two containers
 
 ```jsx
-<div  id='react-jitsi-container' style={...}>
+<div id='react-jitsi-container' style={...}>
     <Loader/>
     <div id='react-jitsi-frame' style={...}>
         <iframe>
@@ -116,13 +115,13 @@ The Jitsi Meet conference iframe is wrapped by two containers
 
 You can specify custom styles for each container in two ways:
 
-- Using CSS,  through the  `#react-jitsi-container` and `#react-jitsi-frame` selectors
+- Using CSS, through the `#react-jitsi-container` and `#react-jitsi-frame` selectors
 - Using inline styling, through the `containerStyle` and `frameStyle` props
 
 For example
 
 ```jsx
-<Jitsi  containerStyle={{ width:  '1200px', height:  '800px' }}>
+<Jitsi containerStyle={{ width: '1200px', height: '800px' }}>
 ```
 
 ## Conference Configuration
@@ -132,7 +131,7 @@ Configuration over both the conference [core settings](https://github.com/jitsi/
 For example
 
 ```jsx
-<Jitsi  
+<Jitsi
   config={{ startAudioOnly: true }}
   interfaceConfig={{ filmStripOnly: true }}>
 ```
@@ -164,8 +163,8 @@ The Jitsi Meet API exposes [several methods](https://github.com/jitsi/jitsi-meet
 For example, to retrieve the device list:
 
 ```jsx
-import  React, { useState } from  'react'
-import  Jitsi  from  'react-jitsi'
+import React, { useState } from 'react'
+import Jitsi from 'react-jitsi'
 
 const handleAPI = (JitsiMeetAPI) => {
     JitsiMeetAPI.executeCommand('toggleVideo')
@@ -174,7 +173,7 @@ const handleAPI = (JitsiMeetAPI) => {
 export const App = () => (
     <>
         <h2>My First Meeting!</h2>
-       <Jitsi onAPILoad={handleAPI} password={password} />
+        <Jitsi onAPILoad={handleAPI} password={password} />
     </>
 )
 ```
