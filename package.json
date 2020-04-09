@@ -3,6 +3,19 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatteo/react-jitsi.git"
+  },
+   "keywords": [
+    "react",
+    "reactjs",
+    "typescript",
+    "jitsi-meet",
+    "jitsi-typescript",
+    "jitsi-react",
+    "react-jitsi"
+  ],
   "files": [
     "dist",
     "src"
@@ -21,16 +34,14 @@
     "react": ">=16"
   },
   "husky": {
-    "hooks": {
-      
-    }
+    "hooks": {}
   },
   "prettier": {
     "printWidth": 80,
     "singleQuote": true,
     "trailingComma": "es5",
     "semi": false,
-    "tabWidth": 4
+    "tabWidth": 2
   },
   "name": "react-jitsi",
   "author": "mat.gia.dev@gmail.com",
