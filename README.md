@@ -6,6 +6,8 @@
 An ***unofficial*** React component which wraps the standard [Jitsi Meet JS API](https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md).
 It is written in Typescript to help you configure the library with ease, and get *your super important meetings* up and going, in a blink of an eye🌪.
 
+> ## [Live Demo](https://gatteo.github.io/react-jitsi/)
+
 ## Requisites
 
 ### Add Jitsi Meet API
