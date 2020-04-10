@@ -44,6 +44,7 @@
     "tabWidth": 2
   },
   "name": "react-jitsi",
+  "description":"React and Typescript component to include Jitsi Meet with ease",
   "author": "mat.gia.dev@gmail.com",
   "module": "dist/react-jitsi.esm.js",
   "devDependencies": {
