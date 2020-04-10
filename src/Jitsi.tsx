@@ -21,7 +21,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
         jwt,
         devices,
         userInfo,
-    } = { ...props, ...Default.Props }
+    } = { ...Default.Props, ...props }
 
     const [loading, setLoading] = useState(true)
     const ref = useRef<HTMLDivElement | null>(null)
