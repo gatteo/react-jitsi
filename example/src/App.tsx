@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Loader from './components/Loader'
-import Jitsi from '../../dist'
+import Jitsi from 'react-jitsi'
 
 import './App.css'
 
@@ -16,7 +16,7 @@ const App: React.FC = (): React.ReactElement => {
 
             <div className='header'>
                 <h1>Jitsi Meet React Demo</h1>
-                <p><i> An example usage of the  <a href='https://github.com/this-fifo/Jitsi'>Jitsi Meet React </a> component.</i></p>
+                <p><i> An example usage of the  <a href='https://www.npmjs.com/package/react-jitsi'>Jitsi Meet React </a> component.</i></p>
             </div>
 
             <div className='main'>
@@ -45,7 +45,7 @@ const App: React.FC = (): React.ReactElement => {
             </div>
 
             <div className='footer'>
-                <p><i> 🔥 Happy Coding! by <a href='https://github.com/this-fifo'>Matteo Giardino</a> @ <a href='https://github.com/this-fifo'>Westudents </a>🔥</i></p>
+                <p><i> 🔥 Happy Coding! by <a href='https://github.com/gatteo'>Matteo Giardino</a> @ <a href='https://westudents.it'>Westudents </a>🔥</i></p>
             </div>
 
         </div>
