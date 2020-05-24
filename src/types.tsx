@@ -823,7 +823,7 @@ export interface InterfaceConfigOptions {
 
     SHOW_BRAND_WATERMARK?: boolean;
 
-    BRAND_WATERMARK_LINK: '';
+    BRAND_WATERMARK_LINK?: '';
 
     SHOW_POWERED_BY?: boolean;
 
@@ -860,7 +860,7 @@ export interface InterfaceConfigOptions {
      * enabled. Also, the "profile" button will not display for user's with a
      * jwt.
      */
-    TOOLBAR_BUTTONS: (
+    TOOLBAR_BUTTONS?: (
         'microphone' | 'camera' | 'closedcaptions' | 'desktop' | 'fullscreen' |
         'fodeviceselection' | 'hangup' | 'profile' | 'info' | 'chat' | 'recording' |
         'livestreaming' | 'etherpad' | 'sharedvideo' | 'settings' | 'raisehand' |
@@ -868,7 +868,7 @@ export interface InterfaceConfigOptions {
         'tileview' | 'videobackgroundblur' | 'download' | 'help' | 'mute-everyone'
     )[];
 
-    SETTINGS_SECTIONS: ('devices' | 'language' | 'moderator' | 'profile' | 'calendar')[];
+    SETTINGS_SECTIONS?: ('devices' | 'language' | 'moderator' | 'profile' | 'calendar')[];
 
     /** 
      * Determines how the video would fit the screen. 'both' would fit the whole
@@ -1012,13 +1012,13 @@ export interface InterfaceConfigOptions {
      *  unsupported are considered suboptimal. 
      *  Valid values are: chrome, chromium, edge, electron, firefox, nwjs, opera, safari
      */
-    OPTIMAL_BROWSERS: ('chrome' | 'chromium' | 'edge' | 'electron' | 'firefox' | 'nwjs' | 'opera' | 'safari')[];
+    OPTIMAL_BROWSERS?: ('chrome' | 'chromium' | 'edge' | 'electron' | 'firefox' | 'nwjs' | 'opera' | 'safari')[];
 
     /**
      * Browsers, in addition to those which do not fully support WebRTC, 
      * that are not supported and should show the unsupported browser page.
      */
-    UNSUPPORTED_BROWSERS: ('chrome' | 'chromium' | 'edge' | 'electron' | 'firefox' | 'nwjs' | 'opera' | 'safari')[];
+    UNSUPPORTED_BROWSERS?: ('chrome' | 'chromium' | 'edge' | 'electron' | 'firefox' | 'nwjs' | 'opera' | 'safari')[];
 
     /**
      * A UX mode where the last screen share participant is automatically
@@ -1083,7 +1083,7 @@ export interface InterfaceConfigOptions {
      * explicitly dismissed through a user action. The value is how long, in
      * milliseconds, those notifications should remain displayed.
      */
-    ENFORCE_NOTIFICATION_AUTO_DISMISS_TIMEOUT: 15000;
+    ENFORCE_NOTIFICATION_AUTO_DISMISS_TIMEOUT?: 15000;
 
     /** List of undocumented settings
      INDICATOR_FONT_SIZES
