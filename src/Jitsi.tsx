@@ -54,10 +54,21 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
                 api.executeCommand('displayName', displayName)
 
-                if (password) api.executeCommand('password', password)
+                if (domain === Default.Props.domain && password)
+                    api.executeCommand('password', password)
 
             })
 
+            /** 
+             * If we are on a self hosted Jitsi domain, we need to become moderators before setting a password
+             * Issue: https://community.jitsi.org/t/lock-failed-on-jitsimeetexternalapi/32060
+             */
+            api.addEventListener('participantRoleChanged', (e: { id: string; role: string }) => {
+
+                if (domain !== Default.Props.domain && password && e.role === 'moderator')
+                    api.executeCommand('password', password)
+
+            })
 
         } catch (error) { console.error('Failed to start the conference', error) }
 
