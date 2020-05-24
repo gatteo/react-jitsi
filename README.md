@@ -192,7 +192,7 @@ If want to submit a fix, or any kind of improvement, create a pull request here 
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<img src="https://firebasestorage.googleapis.com/v0/b/da-scuola.appspot.com/o/da-round.png?alt=media&token=babeb13a-0aee-4aed-a69d-60add2fc07e8" width="100px;"/><br/><sub><p align="center">Dascuola.it</p></sub>](https://dascuola.it/) | [<img src="https://firebasestorage.googleapis.com/v0/b/da-scuola.appspot.com/o/ws-round.png?alt=media&token=468eed8b-628e-4415-87d2-3a4dadbc87f4" width="100px;"/><br/><sub><p align="center">Westudents.it</p></sub>](https://westudents.it/) |
 
-If you are using this component in your organization or project, let us know!
+If you are using this component in your organization/project and would like to be shown in the above list, [send us an email](mailto:mat.gia.dev@gmail.com)!
 
 ---
 

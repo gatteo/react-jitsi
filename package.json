@@ -11,11 +11,13 @@
     "react",
     "reactjs",
     "typescript",
+    "jitsi",
     "jitsi-meet",
     "jitsi-meet",
     "jitsi-typescript",
     "jitsi-react",
-    "react-jitsi"
+    "react-jitsi",
+    "video conferencing"
   ],
   "files": [
     "dist",
