@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Props, JitsiMeetAPIOptions } from './types'
 import * as Default from './defaults'
 
-
 const Jitsi: React.FC<Props> = (props: Props) => {
-
     const {
         containerStyle,
         frameStyle,
@@ -41,12 +39,12 @@ const Jitsi: React.FC<Props> = (props: Props) => {
                 jwt,
                 onLoad: onIframeLoad,
                 devices,
-                userInfo
+                userInfo,
             }
 
             const api = new window.JitsiMeetExternalAPI(domain, options)
 
-            if (!api) throw 'Failed to create JitsiMeetExternalAPI istance'
+            if (!api) throw new Error('Failed to create JitsiMeetExternalAPI istance')
 
             if (onAPILoad) onAPILoad(api)
 
@@ -61,11 +59,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
             })
 
 
-        } catch (error) {
-
-            console.error('Failed to start the conference', error)
-
-        }
+        } catch (error) { console.error('Failed to start the conference', error) }
 
     }
 
@@ -77,18 +71,12 @@ const Jitsi: React.FC<Props> = (props: Props) => {
     }, [])
 
     return (
-        <div id='react-jitsi-container'
-            style={{ ...Default.ContainerStyle, ...containerStyle }} >
-
+        <div id='react-jitsi-container' style={{ ...Default.ContainerStyle, ...containerStyle }}>
             {loading && <Loader />}
 
-            <div id='react-jitsi-frame'
-                style={{ ...Default.FrameStyle(loading), ...frameStyle }}
-                ref={ref} />
-
+            <div id='react-jitsi-frame' style={{ ...Default.FrameStyle(loading), ...frameStyle }} ref={ref} />
         </div>
     )
 }
 
 export default Jitsi
-

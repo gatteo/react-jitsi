@@ -3,8 +3,8 @@
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 [![built with typescript](https://camo.githubusercontent.com/21132e0838961fbecb75077042aa9b15bc0bf6f9/68747470733a2f2f62616467656e2e6e65742f62616467652f4275696c74253230576974682f547970655363726970742f626c7565)](https://www.typescriptlang.org/)
 
-An ***unofficial*** React component which wraps the standard [Jitsi Meet JS API](https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md).
-It is written in Typescript to help you configure the library with ease, and get *your super important meetings* up and going, in a blink of an eye🌪.
+An **_unofficial_** React component which wraps the standard [Jitsi Meet JS API](https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md).
+It is written in Typescript to help you configure the library with ease, and get _your super important meetings_ up and going, in a blink of an eye🌪.
 
 > ## [Live Demo](https://gatteo.github.io/react-jitsi/)
 
@@ -13,11 +13,11 @@ It is written in Typescript to help you configure the library with ease, and get
 ### Add Jitsi Meet API
 
 In order for the component to work, the Jitsi Meet API script must be included in your app's `index.html` file.
-*We recommend doing this **right away**, it is pretty common to forget about it.*
+_We recommend doing this **right away**, it is pretty common to forget about it._
 
 ```html
 <body>
-  <script src='https://meet.jit.si/external_api.js'></script>
+  <script src="https://meet.jit.si/external_api.js"></script>
 </body>
 ```
 
@@ -45,7 +45,7 @@ export const App = () => (
 )
 ```
 
->However, this is **not recommended**, as it will create and join a random room (ex. `hp6y791054a`), which is possibly not unique.
+> However, this is **not recommended**, as it will create and join a random room (ex. `hp6y791054a`), which is possibly not unique.
 
 ### Basic, but better
 
@@ -61,7 +61,7 @@ const userFullName = 'Joseph Strawberry'
 export const App = () => (
     <>
         <h2>My First Meeting!</h2>
-        <Jitsi roomName={roomName} displayName={userFullName}/>
+        <Jitsi roomName={roomName} displayName={userFullName} />
     </>
 )
 ```
@@ -140,20 +140,20 @@ For example
 
 ## Available props
 
-| Prop             | Required | Description                                                                           | Default                                                                 |
-| ---------------- | -------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| containerStyle   | no       | Object containing main container styles (see above for details)                       | `{ width:'800px', height:  '400px' }`                                   |
-| frameStyle       | no       | Object containing frame container styles (see above for details)                      | `{ display:  loading?'none' : 'block',width:  '100%',height:  '100% }'` |
-| loadingComponent | no       | Component shown until the Jitsi Meet video conference is not started                  | `<div>Loading meeting...</div>`                                         |
+| Prop             | Required | Description                                                                           | Default                                                              |
+| ---------------- | -------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| containerStyle   | no       | Object containing main container styles (see above for details)                       | `{ width:'800px', height: '400px' }`                                 |
+| frameStyle       | no       | Object containing frame container styles (see above for details)                      | `{ display: loading?'none' : 'block',width: '100%',height: '100% }'` |
+| loadingComponent | no       | Component shown until the Jitsi Meet video conference is not started                  | `<div>Loading meeting...</div>`                                      |
 | onAPILoad        | no       | Callback function invoked with Jitsi Meet API object when the library is loaded       |
 | onIframeLoad     | no       | Callback function invoked when the conference iframe is loaded                        |
-| domain           | no       | Domain used to build the conference URL                                               | meet.jit.si                                                             |
-| roomName         | no       | Name of the room to join                                                              | A random string                                                         |
+| domain           | no       | Domain used to build the conference URL                                               | meet.jit.si                                                          |
+| roomName         | no       | Name of the room to join                                                              | A random string                                                      |
 | password         | no       | Password to set for the meeting room                                                  |
 | displayName      | no       | Participant's name                                                                    |
 | config           | no       | Overrides for the default meeting settings                                            |
 | interfaceConfig  | no       | Overrides for default meeting interface options                                       |
-| noSSL            | no       | Boolean indicating if the server should be contacted using HTTP or HTTPS              | true                                                                    |
+| noSSL            | no       | Boolean indicating if the server should be contacted using HTTP or HTTPS              | true                                                                 |
 | jwt              | no       | JWT token to pass to the domain                                                       |
 | devices          | no       | A map containing information about the initial devices that will be used in the call. |
 | userInfo         | no       | Object containing information about the participant opening the meeting               |
@@ -188,9 +188,9 @@ If want to submit a fix, or any kind of improvement, create a pull request here 
 
 ## Organizations and projects using this component
 
-|     |     |
-| --- | --- |
-|  [<img src="https://firebasestorage.googleapis.com/v0/b/da-scuola.appspot.com/o/da-round.png?alt=media&token=babeb13a-0aee-4aed-a69d-60add2fc07e8" width="100px;"/><br/><sub><p align="center">Dascuola.it</p></sub>](https://dascuola.it/)     |  [<img src="https://firebasestorage.googleapis.com/v0/b/da-scuola.appspot.com/o/ws-round.png?alt=media&token=468eed8b-628e-4415-87d2-3a4dadbc87f4" width="100px;"/><br/><sub><p align="center">Westudents.it</p></sub>](https://westudents.it/)   |
+|                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<img src="https://firebasestorage.googleapis.com/v0/b/da-scuola.appspot.com/o/da-round.png?alt=media&token=babeb13a-0aee-4aed-a69d-60add2fc07e8" width="100px;"/><br/><sub><p align="center">Dascuola.it</p></sub>](https://dascuola.it/) | [<img src="https://firebasestorage.googleapis.com/v0/b/da-scuola.appspot.com/o/ws-round.png?alt=media&token=468eed8b-628e-4415-87d2-3a4dadbc87f4" width="100px;"/><br/><sub><p align="center">Westudents.it</p></sub>](https://westudents.it/) |
 
 If you are using this component in your organization or project, let us know!
 
