@@ -12,6 +12,7 @@
     "reactjs",
     "typescript",
     "jitsi-meet",
+    "jitsi-meet",
     "jitsi-typescript",
     "jitsi-react",
     "react-jitsi"
@@ -33,16 +34,6 @@
   "peerDependencies": {
     "react": ">=16"
   },
-  "husky": {
-    "hooks": {}
-  },
-  "prettier": {
-    "printWidth": 80,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "semi": false,
-    "tabWidth": 2
-  },
   "name": "react-jitsi",
   "description": "React and Typescript component to include Jitsi Meet with ease",
   "author": "mat.gia.dev@gmail.com",
@@ -50,13 +41,9 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^2.0.4",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
-    "husky": "^4.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tsdx": "^0.13.1",
