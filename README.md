@@ -38,10 +38,10 @@ import React, { useState } from 'react'
 import Jitsi from 'react-jitsi'
 
 export const App = () => (
-    <>
-        <h2>My First Meeting!</h2>
-        <Jitsi />
-    </>
+  <>
+    <h2>My First Meeting!</h2>
+    <Jitsi />
+  </>
 )
 ```
 
@@ -59,10 +59,10 @@ const roomName = 'my-super-secret-meeting-123e4567-e89b-12d3-a456-426655440000'
 const userFullName = 'Joseph Strawberry'
 
 export const App = () => (
-    <>
-        <h2>My First Meeting!</h2>
-        <Jitsi roomName={roomName} displayName={userFullName} />
-    </>
+  <>
+    <h2>My First Meeting!</h2>
+    <Jitsi roomName={roomName} displayName={userFullName} />
+  </>
 )
 ```
 
@@ -75,28 +75,28 @@ import Loader from './components/Loader'
 
 export const App = () => {
 
-    const [displayName, setDisplayName] = useState('')
-    const [roomName, setRoomName] = useState('')
-    const [password, setPassword] = useState('')
-    const [onCall, setOnCall] = useState(false)
+  const [displayName, setDisplayName] = useState('')
+  const [roomName, setRoomName] = useState('')
+  const [password, setPassword] = useState('')
+  const [onCall, setOnCall] = useState(false)
 
-    return onCall
-        ? (
-            <Jitsi
-                roomName={roomName}
-                displayName={displayName}
-                password={password}
-                loadingComponent={Loader}
-                onAPILoad={JitsiMeetAPI => console.log('Good Morning everyone!')}
-            />)
-        : (
-            <>
-                <h1>Crate a Meeting</h1>
-                <input type='text' placeholder='Room name' value={roomName} onChange={e => setRoomName(e.target.value)} />
-                <input type='text' placeholder='Your name' value={displayName} onChange={e => setDisplayName(e.target.value)} />
-                <button onClick={() => setOnCall(true)}> Let&apos;s start!</button>
-            </>
-        )
+  return onCall
+    ? (
+      <Jitsi
+        roomName={roomName}
+        displayName={displayName}
+        password={password}
+        loadingComponent={Loader}
+        onAPILoad={JitsiMeetAPI => console.log('Good Morning everyone!')}
+      />)
+    : (
+      <>
+        <h1>Crate a Meeting</h1>
+        <input type='text' placeholder='Room name' value={roomName} onChange={e => setRoomName(e.target.value)} />
+        <input type='text' placeholder='Your name' value={displayName} onChange={e => setDisplayName(e.target.value)} />
+        <button onClick={() => setOnCall(true)}> Let&apos;s start!</button>
+      </>
+    )
 
 }
 
@@ -108,10 +108,10 @@ The Jitsi Meet conference iframe is wrapped by two containers
 
 ```jsx
 <div id='react-jitsi-container' style={...}>
-    <Loader/>
-    <div id='react-jitsi-frame' style={...}>
-        <iframe>
-    </div>
+  <Loader/>
+  <div id='react-jitsi-frame' style={...}>
+    <iframe>
+  </div>
 </div>
 ```
 
@@ -169,14 +169,14 @@ import React, { useState } from 'react'
 import Jitsi from 'react-jitsi'
 
 const handleAPI = (JitsiMeetAPI) => {
-    JitsiMeetAPI.executeCommand('toggleVideo')
+  JitsiMeetAPI.executeCommand('toggleVideo')
 }
 
 export const App = () => (
-    <>
-        <h2>My First Meeting!</h2>
-        <Jitsi onAPILoad={handleAPI} password={password} />
-    </>
+  <>
+    <h2>My First Meeting!</h2>
+    <Jitsi onAPILoad={handleAPI} password={password} />
+  </>
 )
 ```
 
