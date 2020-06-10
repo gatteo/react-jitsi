@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Props, JitsiMeetAPIOptions } from './types'
 import * as Default from './defaults'
+import { importJitsiApi } from './utils'
 
 const Jitsi: React.FC<Props> = (props: Props) => {
     const {
@@ -26,9 +27,12 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
     const Loader = loadingComponent || Default.Loader
 
-    const startConference = (): void => {
+    const startConference = (JitsiMeetExternalAPI: any): void => {
 
         try {
+
+            console.log('interfaceConfig', interfaceConfig);
+            
 
             const options: JitsiMeetAPIOptions = {
                 roomName,
@@ -42,7 +46,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
                 userInfo,
             }
 
-            const api = new window.JitsiMeetExternalAPI(domain, options)
+            const api = new JitsiMeetExternalAPI(domain, options)
 
             if (!api) throw new Error('Failed to create JitsiMeetExternalAPI istance')
 
@@ -74,17 +78,17 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
     }
 
-    useEffect(() => {
-
-        if (window.JitsiMeetExternalAPI) startConference()
-        else console.error('Jitsi Meet API library not loaded. Did you include it in the html body?')
-
+    useEffect(() => { 
+        importJitsiApi().then(jitsiApi => {
+            startConference(jitsiApi);
+        }).catch(err => {
+            console.error('Jitsi Meet API library not loaded.', err)
+        })
     }, [])
 
     return (
         <div id='react-jitsi-container' style={{ ...Default.ContainerStyle, ...containerStyle }}>
             {loading && <Loader />}
-
             <div id='react-jitsi-frame' style={{ ...Default.FrameStyle(loading), ...frameStyle }} ref={ref} />
         </div>
     )
