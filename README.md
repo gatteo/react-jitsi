@@ -8,19 +8,6 @@ It is written in Typescript to help you configure the library with ease, and get
 
 > ## [Live Demo](https://gatteo.github.io/react-jitsi/)
 
-## Requisites
-
-### Add Jitsi Meet API
-
-In order for the component to work, the Jitsi Meet API script must be included in your app's `index.html` file.
-_We recommend doing this **right away**, it is pretty common to forget about it._
-
-```html
-<body>
-  <script src="https://meet.jit.si/external_api.js"></script>
-</body>
-```
-
 ### Install
 
 ```bash
