@@ -846,6 +846,11 @@ export interface InterfaceConfigOptions {
      */
     LANG_DETECTION?: boolean;
 
+         /**
+     * Hide the invite prompt in the header when alone in the meeting.
+     */
+    HIDE_INVITE_MORE_HEADER?: boolean;
+
     INVITATION_POWERED_BY?: boolean;
 
     /**
