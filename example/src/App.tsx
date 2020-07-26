@@ -35,7 +35,7 @@ const App: React.FC = (): React.ReactElement => {
                         />)
                     : (
                         <>
-                            <h2>Crate your Meeting</h2>
+                            <h2>Create your Meeting</h2>
                             <input type='text' placeholder='Room name' value={roomName} onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setRoomName(e.target.value)} />
                             <input type='text' placeholder='Your name' value={displayName} onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setDisplayName(e.target.value)} />
                             <input type='text' placeholder='Password' value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)} />
