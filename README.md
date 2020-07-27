@@ -78,7 +78,7 @@ export const App = () => {
       />)
     : (
       <>
-        <h1>Crate a Meeting</h1>
+        <h1>Create a Meeting</h1>
         <input type='text' placeholder='Room name' value={roomName} onChange={e => setRoomName(e.target.value)} />
         <input type='text' placeholder='Your name' value={displayName} onChange={e => setDisplayName(e.target.value)} />
         <button onClick={() => setOnCall(true)}> Let&apos;s start!</button>
