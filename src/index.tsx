@@ -1,3 +1,3 @@
-import Jitsi from './Jitsi'
+import Jitsi from "./Jitsi";
 
-export default Jitsi
+export default Jitsi;
