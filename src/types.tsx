@@ -165,6 +165,11 @@ export interface ConfigOptions {
      * input and will suggest another valid device if one is present.  
      */
     enableNoAudioDetection?: boolean;
+    
+    /**
+     * Show preloading page
+     */
+    prejoinPageEnabled?: boolean;
 
     /** 
      * Enabling this will run the lib-jitsi-meet noise detection module which will
