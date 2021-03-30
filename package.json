@@ -1,11 +1,11 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatteo/react-jitsi.git"
+    "url": "git+https://github.com/ivicos-GmbH/react-jitsi.git"
   },
   "keywords": [
     "react",
@@ -36,9 +36,9 @@
   "peerDependencies": {
     "react": ">=16"
   },
-  "name": "react-jitsi",
+  "name": "@samuelp-mw/react-jitsi",
   "description": "React and Typescript component to include Jitsi Meet with ease",
-  "author": "mat.gia.dev@gmail.com",
+  "author": "samuel.pierre@maibornwolff.de",
   "module": "dist/react-jitsi.esm.js",
   "devDependencies": {
     "@types/jest": "^25.2.1",
@@ -49,8 +49,17 @@
     "prettier": "^2.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "tsdx": "^0.13.1",
+    "tsdx": "^0.14.1",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ivicos-GmbH/react-jitsi/issues"
+  },
+  "homepage": "https://github.com/ivicos-GmbH/react-jitsi#readme",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {}
 }
