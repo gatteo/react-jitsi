@@ -17,5 +17,7 @@ module.exports = {
             version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
         },
     },
-    rules: {},
+    rules: {
+        "@typescript-eslint/no-empty-interface": 0
+    },
 }

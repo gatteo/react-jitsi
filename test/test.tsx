@@ -1,7 +1,7 @@
-import Jitsi from '../src'
+import Jitsi from "../src";
 
-describe('Jitsi', () => {
-    it('is truthy', () => {
-        expect(Jitsi).toBeTruthy()
-    })
-})
+describe("Jitsi", () => {
+  it("is truthy", () => {
+    expect(Jitsi).toBeTruthy();
+  });
+});
