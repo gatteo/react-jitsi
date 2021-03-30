@@ -865,6 +865,8 @@ export interface InterfaceConfigOptions {
     | "download"
     | "help"
     | "mute-everyone"
+    | "select-background"
+    | "select-room-background"
   )[];
 
   SETTINGS_SECTIONS?: (
