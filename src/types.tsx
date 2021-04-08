@@ -867,6 +867,7 @@ export interface InterfaceConfigOptions {
     | "mute-everyone"
     | "select-background"
     | "select-room-background"
+    | "select-foreground-overlay"
   )[];
 
   SETTINGS_SECTIONS?: (
