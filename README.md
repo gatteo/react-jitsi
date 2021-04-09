@@ -5,7 +5,7 @@
 
 ## Notes
 
-The repository has been forked from https://github.com/gatteo/react-jitsi and adapted to the need for a custom Jitsi Meet implementation.
+The repository has been forked from https://github.com/gatteo/react-jitsi and adapted to the need for a custom Jitsi Meet implementation. The additional configuration and changes made regarding Ivicos custom Jitsi Meet implementation can be found in USAGE.md. The original documentation from the forked repository is accessible below.
 
 An **_unofficial_** React component which wraps the standard [Jitsi Meet JS API](https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md).
 It is written in Typescript to help you configure the library with ease, and get _your super important meetings_ up and going, in a blink of an eye🌪.
