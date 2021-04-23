@@ -7,7 +7,7 @@ on:
 
 jobs:
   changelog_version_check:
-    name: Check CHANGELOG/package version
+    name: Create tag/release for the package
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -26,36 +26,6 @@ jobs:
       run: bash ./scripts/check-version.sh ${{ steps.changelog_reader.outputs.version }} ${{ steps.checkTag.outputs.exists }}
     - name: Check package version validity
       run: bash ./scripts/check-package-version.sh ${{ steps.changelog_reader.outputs.version }}
-  build_lint:
-    name: Building and checking linter for the package
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - run: npm install
-    - run: npm run build
-    - run: npm run lint
-  publish_package:
-    name: Testing and publishing the package
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - run: npm install
-    - run: npm test
-    - uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        access: public
-  create_release:
-    name: Create tag and release 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
     - id: changelog_reader
       name: Get Changelog Entry
       uses: mindsers/changelog-reader-action@v2
@@ -82,3 +52,28 @@ jobs:
         draft: ${{ steps.changelog_reader.outputs.status == 'unreleased' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build_lint:
+    name: Building and checking linter for the package
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run build
+    - run: npm run lint
+  publish_package:
+    name: Testing and publishing the package
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm test
+    - uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        access: public
