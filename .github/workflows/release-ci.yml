@@ -26,11 +26,6 @@ jobs:
       run: bash ./scripts/check-version.sh ${{ steps.changelog_reader.outputs.version }} ${{ steps.checkTag.outputs.exists }}
     - name: Check package version validity
       run: bash ./scripts/check-package-version.sh ${{ steps.changelog_reader.outputs.version }}
-    - id: changelog_reader
-      name: Get Changelog Entry
-      uses: mindsers/changelog-reader-action@v2
-      with:
-        path: ./CHANGELOG.md
     - name: Create tag
       uses: actions/github-script@v3
       with:
