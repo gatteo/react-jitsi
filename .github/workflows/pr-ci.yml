@@ -1,0 +1,57 @@
+name: Standard Build CI for PRs
+
+on:
+    push:
+        branches-ignore:
+            - 'master'
+    pull_request:
+        branches-ignore:
+            - 'master'
+
+jobs:
+  changelog_version_check:
+    name: Check CHANGELOG/package version
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - id: changelog_reader
+      name: Get Changelog Entry
+      uses: mindsers/changelog-reader-action@v2
+      with:
+        path: ./CHANGELOG.md
+    - uses: mukunku/tag-exists-action@v1.0.0
+      id: checkTag
+      with:
+        tag: 'ivicos_${{ steps.changelog_reader.outputs.version }}'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Check newest version validity
+      run: bash ./scripts/check-version.sh ${{ steps.changelog_reader.outputs.version }} ${{ steps.checkTag.outputs.exists }}
+    - name: Check package version validity
+      run: bash ./scripts/check-package-version.sh ${{ steps.changelog_reader.outputs.version }}
+  build_lint:
+    name: Building and checking linter for the package
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run build
+    - run: npm run lint
+  publish_dry_run:
+    name: Testing and assessing publication to NPM (dry run)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm test
+    - uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        access: public
+        dry-run: true

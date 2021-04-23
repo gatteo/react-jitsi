@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -36,9 +36,9 @@
   "peerDependencies": {
     "react": ">=16"
   },
-  "name": "@samuelp-mw/react-jitsi",
+  "name": "@ivicos/react-jitsi",
   "description": "React and Typescript component to include Jitsi Meet with ease",
-  "author": "samuel.pierre@maibornwolff.de",
+  "author": "info@ivicos.eu",
   "module": "dist/react-jitsi.esm.js",
   "devDependencies": {
     "@types/jest": "^25.2.1",
