@@ -12,7 +12,7 @@ export const importJitsiApi = (envFlavor: string) =>
       } else {
         script.setAttribute(
           "src",
-          "https://test.ivicos-meet.app/external_api.js"
+          "https://eu-de.ivicos-meet.app/external_api.js"
         );
       }
 

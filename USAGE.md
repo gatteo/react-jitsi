@@ -7,7 +7,7 @@ In order to use API commands from the custom Jitsi Meet implementation (https://
 This step is performed in `src/utils.ts` : The files used to import external API endpoints are loaded depending on the environment (staging/production). This corresponds to these lines :
 ```
 script.setAttribute("src", "https://ivicos-meet.app/external_api.js");
-script.setAttribute("src", "https://test.ivicos-meet.app/external_api.js");
+script.setAttribute("src", "https://eu-de.ivicos-meet.app/external_api.js");
 ```
 These files are replacing the official external API files that was taken before by custom ones, used to access the custom Jitsi Meet implementation from Ivicos.
 
