@@ -9,6 +9,7 @@ declare global {
 export interface JitsiMeetAPI {
   // TODO, add definitions
   captureLargeVideoScreenshot: () => Promise<any>;
+  addListener(event: string, listener: (data: any) => any): void;
 }
 
 export interface JitsiMeetAPIOptions {
