@@ -1201,8 +1201,4 @@ export interface Props {
     email?: string;
   };
 
-  /**
-   * Environment flavor indicating whether the staging or production URL for the API bundle file should be used
-   */
-  envFlavor?: string;
 }

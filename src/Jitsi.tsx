@@ -20,7 +20,6 @@ const Jitsi: React.FC<Props> = (props: Props) => {
     jwt,
     devices,
     userInfo,
-    envFlavor,
   } = { ...Default.Props, ...props };
 
   const [loading, setLoading] = useState(true);
@@ -81,7 +80,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
   };
 
   useEffect(() => {
-    importJitsiApi(envFlavor || "production")
+    importJitsiApi(domain)
       .then((jitsiApi) => {
         startConference(jitsiApi);
       })

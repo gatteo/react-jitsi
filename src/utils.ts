@@ -1,4 +1,4 @@
-export const importJitsiApi = (envFlavor: string) =>
+export const importJitsiApi = (domain?: string) =>
   new Promise(async (resolve) => {
     if (window.JitsiMeetExternalAPI) {
       resolve(window.JitsiMeetExternalAPI);
@@ -7,12 +7,12 @@ export const importJitsiApi = (envFlavor: string) =>
       const script = document.createElement("script");
 
       script.setAttribute("type", "text/javascript");
-      if (envFlavor === "production") {
-        script.setAttribute("src", "https://ivicos-meet.app/external_api.js");
+      if (!domain) {
+        script.setAttribute("src", `https://ivicos-meet.app/external_api.js`);
       } else {
         script.setAttribute(
           "src",
-          "https://eu-de.ivicos-meet.app/external_api.js"
+          `https://${domain}/external_api.js`
         );
       }
 
