@@ -1200,5 +1200,4 @@ export interface Props {
   userInfo?: {
     email?: string;
   };
-
 }

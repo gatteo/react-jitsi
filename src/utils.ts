@@ -10,10 +10,7 @@ export const importJitsiApi = (domain?: string) =>
       if (!domain) {
         script.setAttribute("src", `https://ivicos-meet.app/external_api.js`);
       } else {
-        script.setAttribute(
-          "src",
-          `https://${domain}/external_api.js`
-        );
+        script.setAttribute("src", `https://${domain}/external_api.js`);
       }
 
       head.addEventListener(
