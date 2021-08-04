@@ -38,7 +38,6 @@ const App: React.FC = (): React.ReactElement => {
               alignItems: "center",
               justifyContent: "center",
             }}
-            envFlavor="production"
           />
         ) : (
           <>
