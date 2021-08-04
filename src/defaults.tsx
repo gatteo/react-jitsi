@@ -6,7 +6,6 @@ export const Loader = (): React.ReactElement => <div>Loading meeting...</div>;
 export const Props: Type.Props = {
   domain: "ivicos-meet.app",
   roomName: (Math.random() + 0.48151642).toString(36).substring(2),
-  envFlavor: "production",
 };
 
 export const ContainerStyle: React.CSSProperties = {
