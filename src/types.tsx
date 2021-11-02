@@ -702,6 +702,64 @@ export interface ConfigOptions {
    */
   disableRemoteMute?: boolean;
 
+  /**
+   * Specify the settings for video quality optimizations on the client.
+   */
+  videoQuality?: {
+    /**
+     * Provides a way to prevent a video codec from being negotiated on the JVB connection.
+     */
+     disabledCodec?: string;
+
+     /**
+      * Provides a way to set a preferred video codec for the JVB connection.
+      */
+      preferredCodec?: string;
+
+      /**
+       * Provides a way to enforce the preferred codec for the conference even when the conference has endpoints
+       * that do not support the preferred codec.
+       */
+       enforcePreferredCodec?: string;
+
+       /**
+        * Provides a way to configure the maximum bitrates that will be enforced on the simulcast streams for
+        * video tracks.
+        */
+        maxBitratesVideo?: {
+          H264?: {
+            low: number,
+            standard?: number,
+            high?: number
+          },
+          VP8?: {
+            low: number,
+            standard?: number,
+            high?: number
+          },
+          VP9?: {
+            low: number,
+            standard?: number,
+            high?: number
+          }
+        };
+
+        /**
+         * The options can be used to override default thresholds of video thumbnail heights corresponding to
+         * the video quality levels used in the application.
+         */
+         minHeightForQualityLvl?: {
+           360: 'low' | 'standard' | 'high',
+           720: 'low' | 'standard' | 'high'
+         };
+
+         /**
+          * Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
+          * for the presenter mode (camera picture-in-picture mode with screenshare).
+          */
+          resizeDesktopForPresenter?: boolean
+  }
+
   /** 
      * List of undocumented settings used in jitsi-meet:
      
