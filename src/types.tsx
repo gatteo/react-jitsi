@@ -136,14 +136,14 @@ export interface ConfigOptions {
      * desktopSharingFrameRate.max now determines whether simulcast will be enabled
      * or disabled for the screenshare.
      */
-    capScreenshareBitrate: 1 | 0; // 0 to disable - deprecated
+    capScreenshareBitrate?: 1 | 0; // 0 to disable - deprecated
     
     /**
      * Enable callstats only for a percentage of users.
      * This takes a value between 0 and 100 which determines the probability for
      * the callstats to be enabled.
      */
-    callStatsThreshold: number // enable callstats for 5% of the users.
+    callStatsThreshold?: number // enable callstats for 5% of the users.
   };
 
   /**
