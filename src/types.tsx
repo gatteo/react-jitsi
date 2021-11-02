@@ -126,6 +126,24 @@ export interface ConfigOptions {
      * This is useful when the client runs on a host with limited resources.
      */
     noAutoPlayVideo?: boolean;
+
+    /**
+     * Enable / disable 500 Kbps bitrate cap on desktop tracks. When enabled,
+     * simulcast is turned off for the desktop share. If presenter is turned
+     * on while screensharing is in progress, the max bitrate is automatically
+     * adjusted to 2.5 Mbps. This takes a value between 0 and 1 which determines
+     * the probability for this to be enabled. This setting has been deprecated.
+     * desktopSharingFrameRate.max now determines whether simulcast will be enabled
+     * or disabled for the screenshare.
+     */
+    capScreenshareBitrate: 1 | 0; // 0 to disable - deprecated
+    
+    /**
+     * Enable callstats only for a percentage of users.
+     * This takes a value between 0 and 100 which determines the probability for
+     * the callstats to be enabled.
+     */
+    callStatsThreshold: number // enable callstats for 5% of the users.
   };
 
   /**
@@ -751,7 +769,7 @@ export interface ConfigOptions {
        360: 'low' | 'standard' | 'high',
        720: 'low' | 'standard' | 'high'
      }
-     
+
     /**
      * Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
      * for the presenter mode (camera picture-in-picture mode with screenshare).
