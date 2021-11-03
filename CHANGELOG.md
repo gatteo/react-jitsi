@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.8] - 2021-11-02
 
+### changed
+
+- Added 'enableUnifiedOnChrome', 'maxFullResolutionParticipants' to config types
+
+## [2.0.8] - 2021-11-02
+
 ### fixed
 
 - Minor fix

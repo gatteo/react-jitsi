@@ -143,7 +143,7 @@ export interface ConfigOptions {
      * This takes a value between 0 and 100 which determines the probability for
      * the callstats to be enabled.
      */
-    callStatsThreshold?: number // enable callstats for 5% of the users.
+    callStatsThreshold?: number; // enable callstats for 5% of the users.
   };
 
   /**
@@ -157,6 +157,11 @@ export interface ConfigOptions {
   webrtcIceTcpDisable?: boolean;
 
   // ---- Media
+
+  /**
+   * Enable unified plan implementation support on Chromium based browsers.
+   */
+  enableUnifiedOnChrome?: boolean;
 
   // -- Audio
 
@@ -210,6 +215,12 @@ export interface ConfigOptions {
    * Sets the preferred resolution (height) for local video. Defaults to 720.
    */
   resolution?: number;
+
+  /**
+   * How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.
+   * Use -1 to disable.
+   */
+  maxFullResolutionParticipants?: number;
 
   /**
    * w3c spec-compliant video constraints to use for video capture. Currently
@@ -746,36 +757,36 @@ export interface ConfigOptions {
      */
      maxBitratesVideo?: {
        H264?: {
-         low: number,
-         standard?: number,
-         high?: number
-       },
+         low: number;
+         standard?: number;
+         high?: number;
+       };
        VP8?: {
-         low: number,
-         standard?: number,
-         high?: number
-       },
+         low: number;
+         standard?: number;
+         high?: number;
+       };
        VP9?: {
-         low: number,
-         standard?: number,
-         high?: number
-       }
-     }
+         low: number;
+         standard?: number;
+         high?: number;
+       };
+     };
     /**
      * The options can be used to override default thresholds of video thumbnail heights corresponding to
      * the video quality levels used in the application.
      */
      minHeightForQualityLvl?: {
-       360: 'low' | 'standard' | 'high',
-       720: 'low' | 'standard' | 'high'
-     }
+       360: 'low' | 'standard' | 'high';
+       720: 'low' | 'standard' | 'high';
+     };
 
     /**
      * Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
      * for the presenter mode (camera picture-in-picture mode with screenshare).
      */
-     resizeDesktopForPresenter?: boolean
-  }
+     resizeDesktopForPresenter?: boolean;
+  };
 
   /** 
      * List of undocumented settings used in jitsi-meet:
