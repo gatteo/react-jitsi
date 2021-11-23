@@ -788,6 +788,9 @@ export interface ConfigOptions {
      resizeDesktopForPresenter?: boolean;
   };
 
+  // Hides the conference timer.
+  hideConferenceTimer: boolean;
+  
   /** 
      * List of undocumented settings used in jitsi-meet:
      
