@@ -789,8 +789,10 @@ export interface ConfigOptions {
   };
 
   // Hides the conference timer.
-  hideConferenceTimer: boolean;
-  
+    hideConferenceTimer: boolean;
+
+  // Hides the conference subject
+    hideConferenceSubject: boolean;
   /** 
      * List of undocumented settings used in jitsi-meet:
      
