@@ -30,7 +30,7 @@ export interface JitsiMeetAPIOptions {
 
     jwt?: string;
 
-    onLoad?: () => void;
+    onload?: () => void;
 
     invites?: {};
 
