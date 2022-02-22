@@ -1,21 +1,33 @@
 import * as Default from './defaults'
 
-export const importJitsiApi = (domain = Default.Props.domain): Promise<void> => new Promise(async (resolve) => {
+export const importJitsiApi = (domain = Default.Props.domain): Promise<void> => new Promise((resolve, reject) => {
     if(window.JitsiMeetExternalAPI) {
         resolve(window.JitsiMeetExternalAPI)
     } else {
         const head = document.getElementsByTagName("head")[0];
-        const script = document.createElement("script"); 
+        const script = document.createElement("script");
+        const url = `https://${domain}/external_api.js`;
 
         script.setAttribute("type", "text/javascript");
-        script.setAttribute("src", `https://${domain}/external_api.js`);
+        script.setAttribute("src", url);
 
-        head.addEventListener("load", function(event: any) {
-            if (event.target.nodeName === "SCRIPT") {
-                resolve(window.JitsiMeetExternalAPI)
+        const onLoad = (event: any) => {
+            if (event.target === script) {
+                head.removeEventListener("load", onLoad);
+                resolve(window.JitsiMeetExternalAPI);
             }
-        }, true);
+        };
 
-        head.appendChild(script); 
+        const onError = (event: any) => {
+            if (event.target === script) {
+                head.removeEventListener("error", onError);
+                head.removeChild(script);
+                reject('Jitsi API script failed to load');
+            }
+        }
+
+        head.addEventListener("load", onLoad, true);
+        head.addEventListener("error", onError, true);
+        head.appendChild(script);
     }
 })

@@ -79,11 +79,13 @@ const Jitsi: React.FC<Props> = (props: Props) => {
     }
 
     useEffect(() => { 
-        importJitsiApi(domain).then(jitsiApi => {
-            startConference(jitsiApi);
-        }).catch(err => {
-            console.error('Jitsi Meet API library not loaded.', err)
-        })
+        importJitsiApi(domain)
+            .catch(() => importJitsiApi())
+            .then(jitsiApi => {
+              startConference(jitsiApi);
+            }).catch(err => {
+                console.error('Jitsi Meet API library not loaded.', err)
+            })
     }, [])
 
     return (
