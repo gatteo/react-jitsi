@@ -39,5 +39,5 @@ export const importJitsiApi = (domain?: string): Promise<JitsiMeetAPI> => {
         // Fall back to default domain when script loading fails on custom domain
         return injectJitsiApiScript(domain).catch(() => injectJitsiApiScript());
     }
-    return importJitsiApi();
+    return injectJitsiApiScript();
 };
