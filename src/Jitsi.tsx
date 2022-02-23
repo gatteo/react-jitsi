@@ -48,7 +48,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
             const api = new JitsiMeetExternalAPI(domain, options)
 
-            if (!api) throw new Error('Failed to create JitsiMeetExternalAPI istance')
+            if (!api) throw new Error('Failed to create JitsiMeetExternalAPI instance')
 
             if (onAPILoad) onAPILoad(api)
 
