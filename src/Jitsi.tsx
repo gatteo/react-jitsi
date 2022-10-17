@@ -48,7 +48,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
             const api = new JitsiMeetExternalAPI(domain, options)
 
-            if (!api) throw new Error('Failed to create JitsiMeetExternalAPI istance')
+            if (!api) throw new Error('Failed to create JitsiMeetExternalAPI instance')
 
             if (onAPILoad) onAPILoad(api)
 
@@ -78,11 +78,11 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
     }
 
-    useEffect(() => { 
-        importJitsiApi().then(jitsiApi => {
+    useEffect(() => {
+        importJitsiApi(domain).then(jitsiApi => {
             startConference(jitsiApi);
         }).catch(err => {
-            console.error('Jitsi Meet API library not loaded.', err)
+            console.error('Jitsi Meet API library not loaded.', err);
         })
     }, [])
 
