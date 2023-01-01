@@ -18,7 +18,7 @@
     "devDependencies": {
         "@types/react": "^16.9.32",
         "@types/react-dom": "^16.9.6",
-        "parcel": "^1.12.4",
+        "parcel": "^2.8.2",
         "typescript": "^3.8.3",
         "react-jitsi": "^1.0.1"
     }
