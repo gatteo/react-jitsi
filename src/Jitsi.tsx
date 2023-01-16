@@ -32,7 +32,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
         try {
 
             console.log('interfaceConfig', interfaceConfig);
-            
+
 
             const options: JitsiMeetAPIOptions = {
                 roomName,
@@ -56,14 +56,16 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
                 setLoading(false)
 
-                api.executeCommand('displayName', displayName)
+                if (displayName) {
+                    api.executeCommand('displayName', displayName)
+                }
 
                 if (domain === Default.Props.domain && password)
                     api.executeCommand('password', password)
 
             })
 
-            /** 
+            /**
              * If we are on a self hosted Jitsi domain, we need to become moderators before setting a password
              * Issue: https://community.jitsi.org/t/lock-failed-on-jitsimeetexternalapi/32060
              */
@@ -78,7 +80,7 @@ const Jitsi: React.FC<Props> = (props: Props) => {
 
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         importJitsiApi().then(jitsiApi => {
             startConference(jitsiApi);
         }).catch(err => {
